@@ -1,0 +1,27 @@
+ agenda = fopen("contatos.txt","rb");
+    
+    if(agenda == NULL){
+        printf("\nERRO AO ABRIR O ARQUIVO.\n");
+        
+    }else{
+        system("cls");
+        printf("\n---------- LISTA DE CONTATOS ----------\n\n");
+        
+        while(fread(&dados[i], sizeof(struct cadastro), 1, agenda)== 1){
+           
+        printf("nome: %s", dados[i].nome);
+        printf("\ncontato: %s", dados[i].contato);
+        printf("\nemail: %s", dados[i].email);
+        printf("\nrua: %s", dados[i].ender.rua);
+        printf("\nnumero da residencia: %s", dados[i].ender.numero);
+        printf("\ncep: %s", dados[i].ender.cep);
+        printf("\nbairro: %s", dados[i].ender.bairro);
+        printf("\ncidade: %s", dados[i].ender.cidade);
+        printf("\n\n-----------------------------------\n\n");             
+
+		i++;
+    } 
+    }
+    system("pause");
+    fclose(agenda);
+    
